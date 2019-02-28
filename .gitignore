@@ -8,7 +8,7 @@
 # track this file .gitignore 
 !.gitignore
 
-# track this file .gitignore 
+# track this file docker-compose.yml
 !docker-compose.yml
 
 # track readme.md in the root (i.e. do NOT ignore it)

@@ -11,6 +11,12 @@
           while($projects->have_posts()) {
             $projects->the_post(); 
             $live = NULL;
+            $trim = NULL;
+            $trimlen = 150;
+
+            if(strlen(get_the_content()) > 500){
+              $trim = "...";
+            } 
 
             if(the_field('live_url')){
               $live = "<a href=\"#\" class=\"btn btn-live btn-block\"> <i class=\"fas fa-satellite-dish\"></i> Live Demo</a>";
@@ -20,14 +26,14 @@
 
             ?>
 
-            <div class="col-sm">
+            <div class="col-md-6 col-xl-4">
               <div class="card" style="width: 18rem;">
                 <img src="<?php the_field('site_image'); ?>" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title"><?php the_title() ?></h5>
-                  <p class="card-text"><?php echo wp_trim_words(get_the_content(), 12) ?></p>
-                  <a href="#" class="btn btn-github btn-block"> <i class="fab fa-github"></i> GitHub Repo</a>
-                  <?php echo $live ?>
+                  <p class="card-text"><?php echo substr(get_the_content(), 0, $trimlen).$trim ?></p>
+                    <a href="<?php echo the_field('github_url')?>" target="_blank" class="btn btn-github btn-block"> <i class="fab fa-github"></i> GitHub Repo</a>
+                    <?php echo $live ?>
                 </div>
               </div>
             </div>

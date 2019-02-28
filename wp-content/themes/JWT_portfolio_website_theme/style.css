@@ -211,8 +211,27 @@ a:active {
     border-color: #24292e;
 }
 
+.btn-github:hover {
+    color: #f34f29;
+    text-decoration: none;
+}
+
 .btn-live {
     color: #000;
     background-color:rgb(226, 214, 42);
     border-color: rgb(226, 214, 42);
 }
+
+.card{
+    min-height: 25rem;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    height: 150px;
+}
+
+.card-text{
+    min-height: 72px;
+}
+
