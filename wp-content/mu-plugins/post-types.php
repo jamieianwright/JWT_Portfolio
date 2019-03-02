@@ -4,6 +4,7 @@ function portfolio_post_types() {
 
   register_post_type('projects', array(
     'public' => true,
+    'supports' => array('title','author','thumbnail','excerpt'),
     'labels' => array(
       'name' => 'Projects',
       'add_new_item' => 'Add New Project',
@@ -28,6 +29,7 @@ function portfolio_post_types() {
 
   register_post_type('education', array(
     'public' => true,
+    'supports' => array('title','author','thumbnail','excerpt'),
     'labels' => array(
       'name' => 'Education',
       'add_new_item' => 'Add New',

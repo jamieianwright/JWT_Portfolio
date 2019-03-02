@@ -30,22 +30,32 @@
         </li>
     </ul>
 
-    <div class="subheading mb-3">Workflow</div>
-    <ul class="fa-ul mb-0">
-        <li>
-        <i class="fa-li fa fa-check"></i>
-        Mobile-First, Responsive Design</li>
-        <li>
-        <i class="fa-li fa fa-check"></i>
-        Cross Browser Testing &amp; Debugging</li>
-        <li>
-        <i class="fa-li fa fa-check"></i>
-        Cross Functional Teams</li>
-        <li>
-        <i class="fa-li fa fa-check"></i>
-        Agile Development &amp; Scrum</li>
-    </ul>
-    </div>
+    <?php
+        $skillsPage = new WP_Query(array(
+            'pagename' => 'skills'
+        ));
+
+        while($skillsPage->have_posts()){
+            $skillsPage->the_post(); ?>
+
+            <div class="subheading mb-3">Workflow</div>
+            <ul class="fa-ul mb-0">
+                <li>
+                <i class="fa-li fa fa-check"></i>
+                <?php echo the_field('work_flow_item_1') ?></li>
+                <li>
+                <i class="fa-li fa fa-check"></i>
+                <?php echo the_field('work_flow_item_2') ?></li>
+                <li>
+                <i class="fa-li fa fa-check"></i>
+                <?php echo the_field('work_flow_item_3') ?></li>
+                <li>
+                <i class="fa-li fa fa-check"></i>
+                <?php echo the_field('work_flow_item_4') ?></li>
+            </ul>
+            </div>
+
+    <?php } ?>
 </section>
 
 <hr class="m-0">

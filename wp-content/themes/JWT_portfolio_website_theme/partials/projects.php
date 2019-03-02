@@ -31,7 +31,7 @@
                 <img src="<?php the_field('site_image'); ?>" class="card-img-top" alt="...">
                 <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title"><?php the_title() ?></h5>
-                  <p class="card-text"><?php echo substr(get_the_content(), 0, $trimlen).$trim ?></p>
+                  <p class="card-text"><?php echo  the_field('project_description') ?></p>
                     <a href="<?php echo the_field('github_url')?>" target="_blank" class="btn btn-github btn-block"> <i class="fab fa-github"></i> GitHub Repo</a>
                     <?php echo $live ?>
                 </div>

@@ -4,10 +4,6 @@
         <span class="text-primary">Wright</span>
     </h1>
     
-
-    <div class="subheading mb-5"> 24 Euston Drive · Derby, DE1 3TL · 07872 592 594 ·
-        <a href="mailto:someone@example.com?Subject=Saw%20your%20portfolio.%20I%20loved%20it!!!">jamieianwright@googlemail.com</a>
-    </div>
     <?php
         $aboutPage = new WP_Query(array(
             'pagename' => 'about'
@@ -15,6 +11,11 @@
 
         while($aboutPage->have_posts()){
             $aboutPage->the_post(); ?>
+
+            <div class="subheading mb-5"> <?php echo the_field('address_line_1')?> · <?php echo the_field('address_line_2')?> · <?php echo the_field('phone_number')?> ·
+                <a href="mailto:<?php echo the_field('email')?>?Subject=Saw%20your%20portfolio.%20I%20loved%20it!!!"><?php echo the_field('email')?></a>
+            </div>
+    
 
             <p class="lead mb-5"><?php the_content() ?></p>
 
