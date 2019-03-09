@@ -10,19 +10,17 @@
 
           while($projects->have_posts()) {
             $projects->the_post(); 
-            $live = NULL;
-            $trim = NULL;
-            $trimlen = 150;
+            $live = get_field('live_url');
 
-            if(strlen(get_the_content()) > 500){
-              $trim = "...";
-            } 
-
-            if(the_field('live_url')){
-              $live = "<a href=\"#\" class=\"btn btn-live btn-block\"> <i class=\"fas fa-satellite-dish\"></i> Live Demo</a>";
-            } else {
-              $live = "<a href=\"#\" class=\"btn btn-live btn-block disabled \"> <i class=\"fas fa-tools\"></i> No Live Demo</a>";
-            }
+              if($live){
+                $disable = null;
+                $icon = "fa-satellite-dish";
+                $text = "Live Demo";
+              } else {
+                $disable = "disabled";
+                $icon = "fa-tools";
+                $text = "No Live Demo";
+              }
 
             ?>
 
@@ -33,7 +31,7 @@
                   <h5 class="card-title"><?php the_title() ?></h5>
                   <p class="card-text"><?php echo  the_field('project_description') ?></p>
                     <a href="<?php echo the_field('github_url')?>" target="_blank" class="btn btn-github btn-block"> <i class="fab fa-github"></i> GitHub Repo</a>
-                    <?php echo $live ?>
+                    <a href="<?php echo $live ?>" class="btn btn-live btn-block <?php echo $disable ?>"> <i class="fas <?php echo $icon?>"></i> <?php echo $text ?></a>
                 </div>
               </div>
             </div>
