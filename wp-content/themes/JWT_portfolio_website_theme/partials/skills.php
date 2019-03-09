@@ -49,9 +49,6 @@
                 <li>
                 <i class="fa-li fa fa-check"></i>
                 <?php echo the_field('work_flow_item_3') ?></li>
-                <li>
-                <i class="fa-li fa fa-check"></i>
-                <?php echo the_field('work_flow_item_4') ?></li>
             </ul>
             </div>
 
