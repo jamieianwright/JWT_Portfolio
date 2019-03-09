@@ -2,17 +2,17 @@
 
   <div class="container-fluid p-0">
 
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/about.php' ?>
+  <?php get_template_part( 'partials/about' ); ?>
 
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/projects.php' ?>
+  <?php get_template_part( 'partials/projects' ); ?>
 
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/experience.php' ?>
+  <?php get_template_part( 'partials/experience' ); ?>
 
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/education.php' ?>
-    
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/skills.php' ?>
-    
-    <?php include '/var/www/html/wp-content/themes/JWT_portfolio_website_theme/partials/interests.php' ?>
+  <?php get_template_part( 'partials/education' ); ?>
+
+  <?php get_template_part( 'partials/skills' ); ?>
+
+  <?php get_template_part( 'partials/interests' ); ?>
 
   </div>
 

@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php wp_head(); ?>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <?php wp_head(); ?>
+
   </head>
   <body>
     <header>
@@ -21,7 +27,7 @@
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects" ?>Projects</a>
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
